@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {%block title %}
+<title>Онлайн магазин</title>{%endblock%} {% block body %}
+<main>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            {%for el in data%}
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">{{el.title}} </h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title"> {{el.price}} Українських тугриків <small class="text-muted fw-light">/ мес. </small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Включено 10 пользователей </li>
+                            <li>2 ГБ памяти </li>
+                            <li>Поддержка по электронной почте </li>
+                            <li>Доступ к Справочному центру </li>
+                        </ul>
+                        <a href="/buy/{{el.id}}" class=" btn btn-lg btn-outline-primary">Купити</a>
+                    </div>
+                </div>
+            </div>{% endfor%}
+        </div>
+
+    </div>
+
+</main>
+
+{% endblock %}
